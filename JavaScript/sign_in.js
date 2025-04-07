@@ -68,7 +68,7 @@ function SignInForm(){
           console.log("Refresh Token:", data.refresh);
     
           alert("User SignIn successfully!");
-          window.location.href = "dashboard.html"; // Redirect to dashboard after login
+          window.location.href = "/HTML/dashboard.html"; // Redirect to dashboard after login
         })
         .catch((error) => {
           console.error("Signin failed:", error);
@@ -80,7 +80,7 @@ function SignInForm(){
 // Helper function to get a cookie by name
 function getCookie(name) {
   const cookieValue = document.cookie
-    .split("; ")
+    .split(";")
     .find((row) => row.startsWith(name + "="));
   return cookieValue ? cookieValue.split("=")[1] : null;
 }
