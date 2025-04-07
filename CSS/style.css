@@ -1,0 +1,117 @@
+/* Reset default margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #00ccff;
+  }
+
+  /* design out form */
+
+  /* Centered Form Container */
+  
+  body{
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+
+
+  }
+
+  .form-container{
+    max-width: 400px;
+    background:#fff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  }
+
+  .form-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color:#333;
+
+  }
+
+  /* Apply css to form lables*/
+  form label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  /* Apply css to input boxes */
+  form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    /*Apply css to buttons */
+
+    form input[type="button"],
+    form button {
+
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #00ccff;
+      color:white;
+      border:none;
+      border-radius: 8px;
+      font-size : 16px;
+      cursor : pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form input[type="button"]:hover,
+    form button:hover {
+      background-color: #0099cc;
+    }
+  
+
+    /* Added a color to error message*/
+    .error{
+      color:red;
+      font-size: 14px;
+      margin-top:4px;
+    }

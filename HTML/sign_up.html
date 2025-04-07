@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>SignUp </title>
+
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">Seek My Shop</div>
+        <ul class="nav-links">
+          <li><a href="sign_in.html">SignIn</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </nav>
+
+      <h1>SignUn Page</h1>
+
+
+    <div class="form-container">
+        <h2>SignUp</h2>
+        <form id="signinForm">
+            
+            <label for="firstname">First Name :</label>
+            <input type="text" id="firstname" placeholder="firstname" required><br>
+            <!-- Adding a new class for errors handling-->
+             <div class="error" id="firstError"></div>
+
+            <label for="lastname">Last Name :</label>
+            <input type="text" id="lastname" placeholder="lastname" required><br>
+            <!-- Adding a new class for errors handling-->
+            <div class="error" id="lastError"></div>
+
+            <label for="email">Email Address :</label>
+            <input type="email" id="email" placeholder="ex. abc@gmail.com" required><br>
+            <!-- Adding a new class for errors handling-->
+            <div class="error" id="emailError"></div>
+
+            <label for="password">Password :</label>
+            <input type="password" id="password" placeholder="*******" required><br><br>
+            <!-- Adding a new class for eSrrors handling-->
+            <div class="error" id="passError"></div>
+
+            <input type="button" value="Submit" onclick="submitForm()">
+
+            <button type="reset">Cancel</button>
+
+            
+        </form>
+    </div>
+    
+</body>
+<script src="../JavaScript/sign_up.js">
+    
+</script>
+
+</html>
