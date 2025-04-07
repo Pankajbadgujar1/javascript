@@ -1,13 +1,8 @@
-// Helper function to get a cookie by name
-function getCookie(name) {
-    const cookieValue = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith(name + "="));
-    return cookieValue ? cookieValue.split("=")[1] : null;
-  }
-  
-  // Ensure DOM is loaded before accessing elements
-  document.addEventListener("DOMContentLoaded", function () {
+// First, check authentication status when page loads
+document.addEventListener("DOMContentLoaded", function() {
+    // Only authenticated users should access the logout page
+    checkAuth(true);
+    
     const logoutBtn = document.getElementById("logoutBtn");
   
     if (!logoutBtn) {
@@ -20,7 +15,7 @@ function getCookie(name) {
       const access_token = getCookie("access_token");
       console.log("Access Token:", getCookie("access_token"));
       console.log("Refresh Token:", getCookie("refresh_token"));
-
+  
       if (!refresh_token || !access_token) {
         alert("Missing tokens. Please log in first.");
         return;
@@ -44,7 +39,7 @@ function getCookie(name) {
           document.cookie = "refresh_token=; Max-Age=0; path=/";
           
           alert("Logged out successfully!");
-          window.location.href = "login.html"; // or your homepage
+          window.location.href = "sign_in.html"; // Redirect to sign_in page
         } else {
           const errorData = await response.json();
           alert("Logout failed: " + (errorData.error || "Unknown error"));
@@ -54,5 +49,4 @@ function getCookie(name) {
         alert("Something went wrong.");
       }
     });
-  });
-  
+});

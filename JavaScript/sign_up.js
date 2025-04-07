@@ -1,3 +1,10 @@
+// Firstly check authentication status when page loads
+document.addEventListener("DOMContentLoaded", function() {
+  // If already logged in, redirect to dashboard
+  checkAuth(false);
+});
+
+
 function submitForm(){
     console.log("inside function 1 function");
     const first = document.getElementById('firstname').value.trim();

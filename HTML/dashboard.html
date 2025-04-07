@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Seek My Shop</div>
+        <ul class="nav-links">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="form-container" style="text-align: center;">
+        <h2>Welcome to Your Dashboard</h2>
+        <div id="userInfo">
+            <p>Loading user information...</p>
+        </div>
+        <p>You are successfully logged in!</p>
+        <button id="logoutButton" onclick="location.href='logout.html'">Logout</button>
+    </div>
+    
+    <script src="../JavaScript/auth.js"></script>
+    <script src="../JavaScript/dashboard.js"></script>
+</body>
+</html>
