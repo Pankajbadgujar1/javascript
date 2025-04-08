@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     if (!logoutBtn) {
       console.error("Logout button not found!");
+      
       return;
     }
   

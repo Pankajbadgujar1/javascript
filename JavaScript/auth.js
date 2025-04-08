@@ -40,7 +40,7 @@ function isAuthenticated() {
     return true;
   }
   
-  // Get user info from token (basic implementation)
+  //Get user info from token (basic implementation)
   function getUserInfo() {
     const accessToken = getCookie("access_token");
     if (!accessToken) return null;
