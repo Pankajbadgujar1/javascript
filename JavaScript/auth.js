@@ -41,13 +41,39 @@ function isAuthenticated() {
   }
   
   //Get user info from token (basic implementation)
+  // function getUserInfo() {
+  //   const accessToken = getCookie("access_token");
+  //   if (!accessToken) return null;
+    
+  //   // In a real application, you might decode the JWT token
+  //   // For now, we'll just return a placeholder
+  //   return {
+  //     email: "user@example.com" // This would come from your token in a real app
+  //   };
+  // }
+
+
   function getUserInfo() {
     const accessToken = getCookie("access_token");
+    console.log("accessToken  in  getUserInfo() : " ,accessToken)
     if (!accessToken) return null;
+  
+    try {
+      // JWT is usually in format: header.payload.signature
+      const payloadBase64 = accessToken.split('.')[1];
+      const payloadJson = atob(payloadBase64.replace(/-/g, '+').replace(/_/g, '/'));
+      const decoded = JSON.parse(payloadJson);
+
     
-    // In a real application, you might decode the JWT token
-    // For now, we'll just return a placeholder
-    return {
-      email: "user@example.com" // This would come from your token in a real app
-    };
+  
+      return {
+        email: decoded.email || null,
+        username: decoded.username || null,
+        exp: decoded.exp || null,
+      };
+    } catch (error) {
+      console.error("Error decoding token:", error);
+      return null;
+    }
   }
+  

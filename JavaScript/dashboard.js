@@ -1,22 +1,26 @@
-// dashboard.js - Place this in your JavaScript folder
-
 document.addEventListener("DOMContentLoaded", function() {
     // Check if user is authenticated, redirect if not
     if (!checkAuth(true)) {
         // checkAuth will handle the redirect
         return;
     }
+});
     
     // Get user info
-    const user = getUserInfo();
-    const userInfoElement = document.getElementById("userInfo");
-    
-    if (user && userInfoElement) {
-        userInfoElement.innerHTML = `
-            <p>Email: ${user.email}</p>
-        `;
-    }
-});
+    window.addEventListener("DOMContentLoaded", () => {
+        const user = getUserInfo();
+        console.log("User email,", user)
+        const userInfoElement = document.getElementById("userInfo");
+        console.log("userInfoElement",userInfoElement);
+        if (user && userInfoElement) {
+          userInfoElement.innerHTML = `
+            <p><strong>Email:</strong> ${user.email}</p>
+            ${user.username ? `<p><strong>Username:</strong> ${user.username}</p>` : ''}
+          `;
+        } else if (userInfoElement) {
+          userInfoElement.innerHTML = `<p>Unable to load user info. Please log in again.</p>`;
+        }
+      });
 
 
 
@@ -24,12 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // script.js
 const baseURL = "http://127.0.0.1:8000/brands/";
 
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-  return null;
-}
+// function getCookie(name) {
+//   const value = `; ${document.cookie}`;
+//   const parts = value.split(`; ${name}=`);
+//   if (parts.length === 2) return parts.pop().split(';').shift();
+//   return null;
+// }
 
 function displayResponse(data) {
   document.getElementById("api-response").textContent = JSON.stringify(data, null, 2);
