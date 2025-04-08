@@ -1,4 +1,4 @@
-// First, check authentication status when page loads
+// Firstly check authentication status when page loads
 document.addEventListener("DOMContentLoaded", function() {
   // If already logged in, redirect to dashboard
   checkAuth(false);
@@ -77,13 +77,6 @@ function SignInForm(){
     }
 };
 
-// Helper function to get a cookie by name
-function getCookie(name) {
-  const cookieValue = document.cookie
-    .split(";")
-    .find((row) => row.startsWith(name + "="));
-  return cookieValue ? cookieValue.split("=")[1] : null;
-}
 
 
 

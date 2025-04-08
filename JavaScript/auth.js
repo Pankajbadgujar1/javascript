@@ -1,6 +1,4 @@
-// auth.js - Place this in your JavaScript folder
 
-// Check if user is authenticated by examining cookies
 function isAuthenticated() {
     const accessToken = getCookie("access_token");
     const refreshToken = getCookie("refresh_token");
@@ -32,6 +30,12 @@ function isAuthenticated() {
       window.location.href = "dashboard.html";
       return false;
     }
+
+    // if (requiresAuth && !isLoggedIn){
+    //   console.log("Already have Signin : Redirecting to dashboard");
+    //   window.location.href = "dashboard.html";
+    //   return false;
+    // }
     
     return true;
   }
